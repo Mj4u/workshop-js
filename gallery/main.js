@@ -22,7 +22,7 @@ thumbnails.forEach((thumbnail) => {
     const biggerSource = thumbnail.src.replace(new RegExp(".{7}$"), "450/300");
     console.log("bigger: ", biggerSource);
     if (outlet) {
-      outlet.innerHTML = `<img src="${biggerSource}" alt=""/>`;
+      outlet.innerHTML = `<img src="${biggerSource}" alt="${thumbnail.alt}"/>`;
     }
   });
 });
