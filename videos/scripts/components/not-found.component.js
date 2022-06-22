@@ -1,4 +1,4 @@
-class NotFoundPage extends window.videos.Component {
+class NotFoundPage extends globalThis.videos.Component {
     constructor() {
         super();
         console.log("NotFoundPage constructor");
@@ -6,4 +6,4 @@ class NotFoundPage extends window.videos.Component {
     }
 }
 
-window.videos.NotFoundPage = NotFoundPage;
+globalThis.videos.NotFoundPage = NotFoundPage;

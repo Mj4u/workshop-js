@@ -1,4 +1,4 @@
-class Homepage extends window.videos.Component {
+class Homepage extends globalThis.videos.Component {
     constructor() {
         super();
         console.log("Homepage constructor");
@@ -6,4 +6,4 @@ class Homepage extends window.videos.Component {
     }
 }
 
-window.videos.Homepage = Homepage;
+globalThis.videos.Homepage = Homepage;

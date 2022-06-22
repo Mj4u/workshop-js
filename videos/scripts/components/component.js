@@ -27,4 +27,4 @@ class Component {
       }
 }
 
-window.videos.Component = Component;
+globalThis.videos.Component = Component;

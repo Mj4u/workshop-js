@@ -11,23 +11,34 @@ const routes = [
   {
     url: "#/",
     // handler: () => renderPage("#homepage"),
-    handler: window.videos.Homepage,
+    handler: globalThis.videos.Homepage,
   },
   {
     url: "#/registration",
     // handler: () => renderPage("#registration"),
-    handler: window.videos.RegistrationPage,
+    handler: globalThis.videos.RegistrationPage,
   },
   {
     url: "#/login",
     // handler: () => renderPage("#login"),
-    handler: window.videos.LoginPage,
+    handler: globalThis.videos.LoginPage,
   },
   {
     url: "#/registration-complete",
     // handler: () => renderPage("#login"),
-    handler: window.videos.RegistrationCompletePage,
+    handler: globalThis.videos.RegistrationCompletePage,
   },
+  {
+    url: "#/logout",
+    // handler: () => renderPage("#login"),
+    handler: class {
+        constructor(){
+           // UserService.isAuthorized = false;
+            globalThis.videos.AuthService.logout();
+            location.hash = "/";
+        }
+    }
+  }
 ];
 
 function renderApp() {

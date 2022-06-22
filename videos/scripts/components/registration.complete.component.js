@@ -1,4 +1,4 @@
-class RegistrationCompletePage extends window.videos.Component {
+class RegistrationCompletePage extends globalThis.videos.Component {
     constructor() {
         super();
         console.log("RegistrationCompletePagePage constructor");
@@ -9,4 +9,4 @@ class RegistrationCompletePage extends window.videos.Component {
     
 }
 
-window.videos.RegistrationCompletePage = RegistrationCompletePage;
+globalThis.videos.RegistrationCompletePage = RegistrationCompletePage;
