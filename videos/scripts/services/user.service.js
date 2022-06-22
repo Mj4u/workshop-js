@@ -1,8 +1,8 @@
 import { AuthService } from "./auth.service";
 
 export const UserService = {
-    isAuthorized:false,
-    
+  isAuthorized: false,
+
   addUser(user) {
     return fetch("https://fakes.herokuapp.com/users", {
       method: "post",
@@ -23,15 +23,15 @@ export const UserService = {
       .then((users) => {
         const authenticateUser = users.find((user) => {
           return (
-            user.login === credentials.login &&
-            user.__DO_NOT_USE__password === credentials.password
+            user.login === credentials.login 
+            && user.__DO_NOT_USE__password === credentials.password
           );
         });
-       
-        //kotlog 
+
+        //kotlog
         const status = authenticateUser !== undefined;
-        if (status){
-            AuthService.login();
+        if (status) {
+          AuthService.login();
         }
         return status;
         // StorageService.create('auth', false)
@@ -39,5 +39,3 @@ export const UserService = {
       });
   },
 };
-
-

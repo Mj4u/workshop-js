@@ -1,9 +1,7 @@
+// function
 
-// function 
-
-//function 
-import {renderApp} from "./routing";
-
+//function
+import { renderApp } from "./routing";
 
 export function main() {
   window.addEventListener("hashchange", renderApp);
