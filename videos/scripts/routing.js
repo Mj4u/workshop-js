@@ -56,11 +56,13 @@ export function renderApp() {
   }
 
   const activatedRoute = routes.find((route) => {
-    console.log("route.url", location.hash + " location.hash:", location.hash);
+   // console.log("route.url", location.hash + " location.hash:", location.hash);
     return route.url === location.hash;
   });
 
   if (activatedRoute) {
+    /* eslint-disable-next-line no-new, new-cap */
+    // @ts-ignore
     new activatedRoute.handler();
   } else {
     //renderPage("#not-found");
