@@ -1,13 +1,10 @@
-const AuthService = {
-    
-    login() {
-        StorageService.create('auth', true);
-    },
-    logout() {
-        StorageService.delete('auth');
-    },
+import { StorageService } from "./storage.service";
 
-  };
-  
-  globalThis.videos.AuthService = AuthService;
-  
+export const AuthService = {
+  login() {
+    StorageService.create("auth", true);
+  },
+  logout() {
+    StorageService.delete("auth");
+  },
+};

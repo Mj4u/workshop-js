@@ -1,4 +1,8 @@
-class LoginPage extends globalThis.videos.Component {
+import { Component } from "./component";
+import { UserService } from "../services/user.service";
+import { AuthService } from "../services/auth.service";
+
+export class LoginPage extends Component {
   constructor() {
     super();
     console.log("LoginPage constructor");
@@ -34,19 +38,18 @@ class LoginPage extends globalThis.videos.Component {
       //     renderApp();
       //   });
 
-      globalThis.videos.UserService.auth({
+      UserService.auth({
         login: fields.get("email"),
         password: fields.get("password"),
       }).then((status) => {
         console.log("login status:", status);
-        globalThis.videos.AuthService.login();
+        AuthService.login();
         if (status) {
-            location.hash = "/";
-          } else {
-              $form.append(this.createLoginErrorMessage());
-          }
+          location.hash = "/";
+        } else {
+          $form.append(this.createLoginErrorMessage());
+        }
       });
-      
     });
   }
 
@@ -56,5 +59,3 @@ class LoginPage extends globalThis.videos.Component {
     return $message;
   }
 }
-
-globalThis.videos.LoginPage = LoginPage;

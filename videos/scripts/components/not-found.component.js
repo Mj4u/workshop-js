@@ -1,9 +1,9 @@
-class NotFoundPage extends globalThis.videos.Component {
+import { Component } from "./component";
+
+export class NotFoundPage extends Component {
     constructor() {
         super();
         console.log("NotFoundPage constructor");
-        this.renderPage('#not-found');
+        this.renderPage("#not-found");
     }
 }
-
-globalThis.videos.NotFoundPage = NotFoundPage;

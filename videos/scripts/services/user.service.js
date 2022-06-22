@@ -1,4 +1,6 @@
-const UserService = {
+import { AuthService } from "./auth.service";
+
+export const UserService = {
     isAuthorized:false,
     
   addUser(user) {
@@ -29,7 +31,7 @@ const UserService = {
         //kotlog 
         const status = authenticateUser !== undefined;
         if (status){
-            globalThis.videos.AuthService.login();
+            AuthService.login();
         }
         return status;
         // StorageService.create('auth', false)
@@ -38,4 +40,4 @@ const UserService = {
   },
 };
 
-globalThis.videos.UserService = UserService;
+

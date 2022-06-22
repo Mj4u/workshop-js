@@ -1,12 +1,12 @@
-class RegistrationCompletePage extends globalThis.videos.Component {
+import { Component } from "./component";
+
+export class RegistrationCompletePage extends Component {
     constructor() {
         super();
         console.log("RegistrationCompletePagePage constructor");
-        this.renderPage('#registration-complete');
+        this.renderPage("#registration-complete");
        
     }
   
     
 }
-
-globalThis.videos.RegistrationCompletePage = RegistrationCompletePage;

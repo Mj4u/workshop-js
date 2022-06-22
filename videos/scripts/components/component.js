@@ -1,4 +1,4 @@
-class Component {
+export class Component {
     copyTemplate(selector) {
         /**
          * @type {HTMLTemplateElement|null}
@@ -26,5 +26,3 @@ class Component {
         this.render(this.copyTemplate(selector));
       }
 }
-
-globalThis.videos.Component = Component;

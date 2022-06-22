@@ -1,4 +1,4 @@
-const StorageService = {
+export const StorageService = {
   create(key, value) {
     localStorage.setItem(key, value);
   },
@@ -13,4 +13,4 @@ const StorageService = {
   },
 };
 
-globalThis.videos.StorageService = StorageService;
+

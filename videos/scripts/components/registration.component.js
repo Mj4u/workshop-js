@@ -1,4 +1,8 @@
-class RegistrationPage extends globalThis.videos.Component {
+import { Component } from "./component";
+import { UserService } from "../services/user.service";
+import { renderApp } from "../routing";
+
+export class RegistrationPage extends Component {
   constructor() {
     super();
     console.log("RegistrationPage constructor");
@@ -20,25 +24,23 @@ class RegistrationPage extends globalThis.videos.Component {
       const fields = new Map(formData);
 
       console.log("fields: ", fields);
-      window.videos.UserService.addUser({
+      UserService.addUser({
         id: String(Date.now()),
         name: `${fields.get("name")} ${fields.get("surname")}`,
         avatarUrl: "",
         login: fields.get("email"),
         password: "9e27a9ab5a41fe2425657023160d46c854c75126",
         __DO_NOT_USE__password: fields.get("password"),
-      }).then((response) => {
-        console.log("status", { response });
-        location.hash ='#/registration-complete';
+      }).then(() => {
+        // console.log("status", { response });
+        location.hash = "#/registration-complete";
         renderApp();
       });
     });
   }
-  createSuccessRegistrationMessage(){
-    const $message = document.createElement('p');
+  createSuccessRegistrationMessage() {
+    const $message = document.createElement("p");
     $message.textContent = "Rejestracja zakończyła się sukcesem";
     return $message;
-    }
-};
-
-globalThis.videos.RegistrationPage = RegistrationPage;
+  }
+}

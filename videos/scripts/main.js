@@ -2,10 +2,10 @@
 // function 
 
 //function 
+import {renderApp} from "./routing";
 
 
-
-function main() {
+export function main() {
   window.addEventListener("hashchange", renderApp);
   renderApp();
 }
